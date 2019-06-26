@@ -4,7 +4,8 @@
 
 replicaCount: 1
 
-sleepBeforeStart: 30
+stsSleepBeforeStart: 5
+deploymentSleepBeforeStart: 5
 
 image:
   repository: nginx

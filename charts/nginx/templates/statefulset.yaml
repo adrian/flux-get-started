@@ -18,7 +18,7 @@ spec:
         - name: nginx
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           command: ["/bin/sh"]
-          args: ["-c", "sleep {{ .Values.sleepBeforeStart }}; nginx -g \"daemon off;\""]
+          args: ["-c", "sleep {{ .Values.stsSleepBeforeStart }}; nginx -g \"daemon off;\""]
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http

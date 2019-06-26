@@ -23,7 +23,7 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           command: ["/bin/sh"]
-          args: ["-c", "sleep {{ .Values.sleepBeforeStart }}; nginx -g \"daemon off;\""]
+          args: ["-c", "sleep {{ .Values.deploymentSleepBeforeStart }}; nginx -g \"daemon off;\""]
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
