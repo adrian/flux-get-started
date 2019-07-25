@@ -1,16 +1,16 @@
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: acme-deploy
+  name: {{ .Release.Name }}-acme-deploy
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      name: acme-deploy
+      name: {{ .Release.Name }}-acme-deploy
   template:
     metadata:
       labels:
-        name: acme-deploy
+        name: {{ .Release.Name }}-acme-deploy
     spec:
       containers:
         - name: nginx

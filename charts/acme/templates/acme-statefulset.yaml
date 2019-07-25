@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: acme-statefulset
+  name: {{ .Release.Name }}-acme-statefulset
 spec:
   selector:
     matchLabels:
-      app: acme-statefulset # has to match .spec.template.metadata.labels
+      app: {{ .Release.Name }}-acme-statefulset # has to match .spec.template.metadata.labels
   replicas: {{ .Values.replicaCount }}
   template:
     metadata:
       labels:
-        app: acme-statefulset # has to match .spec.selector.matchLabels
+        app: {{ .Release.Name }}-acme-statefulset # has to match .spec.selector.matchLabels
     spec:
       containers:
         - name: nginx
