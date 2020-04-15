@@ -11,6 +11,7 @@ spec:
     metadata:
       labels:
         app: {{ .Release.Name }}-acme-statefulset # has to match .spec.selector.matchLabels
+        hello: {{ .Values.hello }}
     spec:
       containers:
         - name: nginx
